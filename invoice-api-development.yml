@@ -1,0 +1,15 @@
+server:
+    port: 5300
+    error:
+        include-stacktrace: never
+
+spring:
+    application:
+      name: invoice-api
+    profiles:
+      active: ${PROFILES_ACTIVE:dev}
+    cloud:
+        consul:
+        host: localhost
+        port: 8500
+        failFast: false
