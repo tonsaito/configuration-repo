@@ -8,8 +8,13 @@ spring:
       name: payment-api
     profiles:
       active: ${PROFILES_ACTIVE:dev}
-    cloud:
-        consul:
-        host: localhost
-        port: 8500
-        failFast: false
+
+security:
+    oauth2:
+        resource:
+            user-info-uri: http://200.171.251.125:25565/me
+        client:
+            access-token-uri: http://localhost:25565/oauth/token
+            client-id: api
+            client-secret: api123
+            grant-type: client_credentials
